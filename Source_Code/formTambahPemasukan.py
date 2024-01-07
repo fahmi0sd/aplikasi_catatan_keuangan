@@ -29,10 +29,12 @@ from tkinter import filedialog
 import os
 
 class FormTambahPemasukan(QWidget):
-    def __init__(self):
+    def __init__(self, window):
         super().__init__()
         self.setWindowTitle("Form Tambah Catatan Keuangan")
         self.setGeometry(850, 200, 500, 350)
+
+        self.window = window
 
         self.mydb = mc.connect(
                 host="localhost",
@@ -98,3 +100,24 @@ class FormTambahPemasukan(QWidget):
             print(f"Gagal Menambahkan data pemasukan: {str(e)}")
             QMessageBox.warning(self, 'Peringatan', 'Gagal menambahkan catatan pemasukan.')
         self.close()
+
+        self.window.load_catatan1()
+        self.window.load_catatan2()
+        self.window.load_catatan3()
+        self.window.load_catatan4()
+        self.window.load_catatan5()
+        self.window.load_catatan6()
+        self.window.load_catatan7()
+        self.window.load_catatan8()
+        self.window.total1()
+        self.window.total2()
+        self.window.total3()
+        self.window.total4()
+        self.window.total5()
+        self.window.total6()
+        self.window.total7()
+        self.window.total8()
+        self.window.saldo1()     
+        self.window.saldo2()
+        self.window.saldo3()
+        self.window.saldo4()

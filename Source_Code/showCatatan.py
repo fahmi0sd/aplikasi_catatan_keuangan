@@ -31,11 +31,13 @@ from editPemasukan import EditPemasukan
 from editPengeluaran import EditPengeluaran
 
 class ShowCatatan(QDialog):
-    def __init__(self, item):
+    def __init__(self, item, window):
         super().__init__()
 
         self.setWindowTitle("Form Keterangan Catatan Keuangan")
         self.setGeometry(850, 200, 500, 350)
+
+        self.window = window
 
         self.mydb = mc.connect(
             host="localhost",
@@ -182,6 +184,26 @@ class ShowCatatan(QDialog):
                 print("Data pengeluaran berhasil diupdate.")
                 QMessageBox.information(self, 'Info', 'Data pengeluaran berhasil diupdate.')
 
+                self.window.load_catatan1()
+                self.window.load_catatan2()
+                self.window.load_catatan3()
+                self.window.load_catatan4()
+                self.window.load_catatan5()
+                self.window.load_catatan6()
+                self.window.load_catatan7()
+                self.window.load_catatan8()
+                self.window.total1()
+                self.window.total2()
+                self.window.total3()
+                self.window.total4()
+                self.window.total5()
+                self.window.total6()
+                self.window.total7()
+                self.window.total8()
+                self.window.saldo1()     
+                self.window.saldo2()
+                self.window.saldo3()
+                self.window.saldo4()
                 self.close()
                 self.tampilkan_pengeluaran(item)
 
@@ -209,7 +231,27 @@ class ShowCatatan(QDialog):
                 print("Data pemasukan berhasil diupdate.")
                 QMessageBox.information(self, 'Info', 'Data pemasukan berhasil diupdate.')
 
-                # Bersihkan tampilan   
+                # Bersihkan tampilan
+                self.window.load_catatan1()
+                self.window.load_catatan2()
+                self.window.load_catatan3()
+                self.window.load_catatan4()
+                self.window.load_catatan5()
+                self.window.load_catatan6()
+                self.window.load_catatan7()
+                self.window.load_catatan8()
+                self.window.total1()
+                self.window.total2()
+                self.window.total3()
+                self.window.total4()
+                self.window.total5()
+                self.window.total6()
+                self.window.total7()
+                self.window.total8()
+                self.window.saldo1()     
+                self.window.saldo2()
+                self.window.saldo3()
+                self.window.saldo4()   
                 self.close()
                 self.tampilkan_pemasukan(item)
 
@@ -232,6 +274,27 @@ class ShowCatatan(QDialog):
                 self.mydb.commit()
 
                 QMessageBox.information(self, 'Info', 'Data pengeluaran berhasil dihapus.')
+
+                self.window.load_catatan1()
+                self.window.load_catatan2()
+                self.window.load_catatan3()
+                self.window.load_catatan4()
+                self.window.load_catatan5()
+                self.window.load_catatan6()
+                self.window.load_catatan7()
+                self.window.load_catatan8()
+                self.window.total1()
+                self.window.total2()
+                self.window.total3()
+                self.window.total4()
+                self.window.total5()
+                self.window.total6()
+                self.window.total7()
+                self.window.total8()
+                self.window.saldo1()     
+                self.window.saldo2()
+                self.window.saldo3()
+                self.window.saldo4()
                 self.close()
 
             except mc.Error as e:
@@ -254,6 +317,26 @@ class ShowCatatan(QDialog):
 
                 QMessageBox.information(self, 'Info', 'Data pemasukan berhasil dihapus.')
 
+                self.window.load_catatan1()
+                self.window.load_catatan2()
+                self.window.load_catatan3()
+                self.window.load_catatan4()
+                self.window.load_catatan5()
+                self.window.load_catatan6()
+                self.window.load_catatan7()
+                self.window.load_catatan8()
+                self.window.total1()
+                self.window.total2()
+                self.window.total3()
+                self.window.total4()
+                self.window.total5()
+                self.window.total6()
+                self.window.total7()
+                self.window.total8()
+                self.window.saldo1()     
+                self.window.saldo2()
+                self.window.saldo3()
+                self.window.saldo4()
                 self.close()
 
             except mc.Error as e:

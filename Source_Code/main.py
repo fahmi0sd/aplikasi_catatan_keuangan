@@ -821,18 +821,18 @@ class CatatanKeuanganApp(QMainWindow):
         self.label20.setText(f"Saldo : Rp. {saldo}")
 
     def tambahCatatanPemasukan(self):
-        self.tambah = FormTambahPemasukan()
+        self.tambah = FormTambahPemasukan(self)
         self.tambah.show()
 
     def tambahCatatanPengeluaran(self):
-        self.tambah = FormTambahPengeluaran()
+        self.tambah = FormTambahPengeluaran(self)
         self.tambah.show()
 
     def show_catatan(self, item):
         itemTerpilih = item.text()
         baris = itemTerpilih.split(": ")
         id_item = baris[1]
-        tampilkan = ShowCatatan(id_item)
+        tampilkan = ShowCatatan(id_item, self)
         tampilkan.exec_()
 
     def show_diagram1(self):
